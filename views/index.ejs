@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href="http://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+   
+  </head>
+  <body>
+    <h1>Filter Records</h1>
+    <form method="post" action="/search">
+    <label>Enter Name:</label>
+    <input type="text" name='item' placeholder="Enter Name">
+    <label>Enter Price:</label>
+    <input type="text" name='pr' placeholder="Enter Price">
+    <label>Enter Area:</label>
+    <input type="text" name='ar' placeholder="Enter Area">
+    <input type="submit">
+     </form>
+    <h1><%= title %></h1>
+   <table class="table">
+     <thead>
+       <tr>
+         <th>Item </th>
+         <th>Price</th>
+         <th>Quantity</th>
+         <th>Guarantee Years</th>
+         <th>Area</th>
+         <th>Total</th>
+         <th>Action</th>
+       </tr>
+     </thead>
+     <% if(records.length >0){%>
+     <% records.forEach(function(i){%>
+      <tr>
+       <td><%= i.item%></td>
+       <td><%= i.price%></td>
+       <td><%= i.qty%></td>
+       <td><%= i.grYears%></td>
+       <td><%= i.area%></td>
+       <td><%= i.total%></td>
+       <td>
+         <a class="btn btn-primary btn-xs" href="/edit/<%=i._id%>"><i class="fa fa-edit" ></i></a>
+         <a class="btn btn-danger btn-xs" href="/delete/<%=i._id%>"><i class="fa fa-trash" ></i></a>
+       </td>
+      </tr>
+       <% })} else{%>
+        <tr><td><h1>Record Not Found</h1></td></tr>
+       <%}%>
+   </table>
+   <div class="container">
+     <div class="row">
+   <h1>Enter Shopping Records</h1>
+   <form method="post" action="/">
+  <label>Enter Item Name :</label>
+  <input type="text" name='item' placeholder="Enter Item name"><br>
+  <label>Enter Price:</label>
+  <input type="text" name="price" placeholder="Enter Price"><br>
+  <label>Enter Quantity:</label>
+  <input type="text" name="qua" placeholder="Enter Quantity"><br>
+  <label>Enter Price:</label>
+  <input type="text" name="gryy" placeholder="Enter Guarantee Years"><br>
+  <label>Enter Area:</label>
+  <input type="text" name="area" placeholder="Enter Area"><br>
+  <input type="submit">
+  </form>
+</div></div>
+  </body>
+</html>

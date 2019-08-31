@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href="http://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+   
+  </head>
+  <body>
+        <div class="container">
+                <div class="row">
+              <h1>Enter Edit Shopping Records</h1>
+              <form method="post" action="/update">
+                <input type="hidden" name="id" value="<%=records._id%>">
+             <label>Enter Item Name :</label>
+             <input type="text" name='item' placeholder="Enter Item name" value="<%=records.item%>"><br>
+             <label>Enter Price:</label>
+             <input type="text" name="price" placeholder="Enter Price"value="<%=records.price%>"><br>
+             <label>Enter Quantity:</label>
+             <input type="text" name="qua" placeholder="Enter Quantity"value="<%=records.qty%>"><br>
+             <label>Enter Price:</label>
+             <input type="text" name="gryy" placeholder="Enter Guarantee Years"value="<%=records.grYears%>"><br>
+             <label>Enter Area:</label>
+             <input type="text" name="area" placeholder="Enter Area"value="<%=records.area%>"><br>
+             <input type="submit">
+             </form>
+           </div></div>
+             </body>
+           </html>
+           
